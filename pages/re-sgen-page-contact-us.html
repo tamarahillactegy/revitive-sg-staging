@@ -1,0 +1,22 @@
+<div class="cm-wrapper-left">
+	<h1>Contact Us Form</h1>
+	<div id="skin_content" style="margin-bottom: 20px;">
+		<p>If you have any questions or would like more information please email us through the form below. We will endeavour to contact you within 48 hours (excluding weekends). All required fields are marked with a star (*).</p>
+		<p>Click the 'Submit' button at the bottom of this form to proceed.</p>
+		{{block type="core/template" name="contactForm" template="contacts/form.phtml"}}
+	</div>
+		<h2><span>Address for Actegy Health</span></h2>
+		<p>Local address and telephone numbers</p>
+		<p>Should you experience any problems with your REVITIVE please return it to the shop or pharmacy you purchased REVITIVE from. They will be able to advise you on what to do next.</p>
+</div>
+
+
+
+<!-- STATIC BLOCKS -->
+
+<reference name="right">
+	<block type="cms/block" name="store_locator"><action method="setBlockId"><block_id>store_locator</block_id></action></block>
+	<block type="cms/block" name="static_how_it_works"><action method="setBlockId"><block_id>static_how_it_works</block_id></action></block>
+	<block type="cms/block" name="static_user_reviews"><action method="setBlockId"><block_id>static_user_reviews</block_id></action></block>
+	<block type="cms/block" name="static_clinical_evidence"><action method="setBlockId"><block_id>static_clinical_evidence</block_id></action></block>
+</reference>
