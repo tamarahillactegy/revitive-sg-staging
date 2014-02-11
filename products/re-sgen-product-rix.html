@@ -128,9 +128,64 @@ Revitive IX
 			</div>                                      
 
 
-		</div>   
+		</div>
+
+		<div id="myModal" class="reveal-modal" style="background:#f2f2f2;width:auto;padding: 25px 30px;">
+			<h2 style="margin-bottom:15px;color:#3a913f;font-size:24px;line-height:28px;border:0;text-align:center;">Buy From These Retailers</h2>
+
+			<div style="width: 540px;margin-bottom: 25px;">
+				<h3 style="color: #575959;font-size: 18px;line-height: 22px;text-align: center;">Buy Online</h3>
+				<div style="margin-bottom: 10px;background-color: #fff;border: #dbdbdb 1px solid;border-radius: 5px;text-align: center;padding: 10px 0;">
+					<a onclick="_gaq.push(['_trackEvent', ‘Buy Online', 'Courts']);" href="http://www.courts.com.sg/Products/PID-IP078853(Courts)/Home-Appliances/Health/Health-Monitors/REVITIVE-CIRCULATION-BOOSTER-CIRCULATION-BOOSTER" target="_blank"><img style="display:block;height:40px;width:140px;margin: 0 auto;" src="{{media url="re_sgen/stores/re-sg-stores-courts.png"}}" alt="Courts"></a>
+					<a onclick="_gaq.push(['_trackEvent', ‘Buy Online', 'Courts']);" href="http://www.courts.com.sg/Products/PID-IP078853(Courts)/Home-Appliances/Health/Health-Monitors/REVITIVE-CIRCULATION-BOOSTER-CIRCULATION-BOOSTER" target="_blank">courts.com.sg</a>
+				</div>
+			</div>
+
+			<div>
+				<h3 style="color: #575959;font-size: 18px;line-height: 22px;text-align: center;">Find A Store</h3>
+			</div>
+
+			<div style="float: left;width: 260px;margin-right: 20px;">
+
+				<div style="margin-bottom: 10px;background-color: #fff;border: #dbdbdb 1px solid;border-radius: 5px;text-align: center;padding: 10px 0;">
+					<a href="{{store url="store-locator"}}"><img style="display:block;height:40px;width:140px;margin: 0 auto;" src="{{media url="re_sgen/stores/re-sg-stores-guardian.png"}}" alt="Guardian Logo"></a>
+					<a href="{{store url="store-locator"}}">Find A Store</a>
+				</div>
+
+				<div style="margin-bottom: 10px;background-color: #fff;border: #dbdbdb 1px solid;border-radius: 5px;text-align: center;padding: 10px 0;">
+					<a href="{{store url="store-locator"}}"><img style="display:block;height:40px;width:140px;margin: 0 auto;" src="{{media url="re_sgen/stores/re-sg-stores-watsons.png"}}" alt="Watsons Logo"></a>
+					<a href="{{store url="store-locator"}}">Find A Store</a>
+				</div>
+
+				<div style="margin-bottom: 10px;background-color: #fff;border: #dbdbdb 1px solid;border-radius: 5px;text-align: center;padding: 10px 0;">
+					<a href="{{store url="store-locator"}}"><img style="display:block;height:40px;width:140px;margin: 0 auto;" src="{{media url="re_sgen/stores/re-sg-stores-unity.png"}}" alt="Unity Logo"></a>
+					<a href="{{store url="store-locator"}}">Find A Store</a>
+				</div>
+
+			</div>
 
 
+			<div style="float: left;width: 260px;">
+
+				<div style="margin-bottom: 10px;background-color: #fff;border: #dbdbdb 1px solid;border-radius: 5px;text-align: center;padding: 10px 0;">
+					<a href="{{store url="store-locator"}}"><img style="display:block;height:40px;width:140px;margin: 0 auto;" src="{{media url="re_sgen/stores/re-sg-stores-harvey-norman.png"}}" alt="Harvey Norman Logo"></a>
+					<a href="{{store url="store-locator"}}">Find A Store</a>
+				</div>
+
+				<div style="margin-bottom: 10px;background-color: #fff;border: #dbdbdb 1px solid;border-radius: 5px;text-align: center;padding: 10px 0;">
+					<a href="{{store url="store-locator"}}"><img style="display:block;height:40px;width:140px;margin: 0 auto;" src="{{media url="re_sgen/stores/re-sg-stores-best-denki.png"}}" alt="Best Denki Logo"></a>
+					<a href="{{store url="store-locator"}}">Find A Store</a>
+				</div>
+
+				<div style="margin-bottom: 10px;background-color: #fff;border: #dbdbdb 1px solid;border-radius: 5px;text-align: center;padding: 10px 0;">
+					<a href="{{store url="store-locator"}}"><img style="display:block;height:40px;width:140px;margin: 0 auto;" src="{{media url="re_sgen/stores/re-sg-stores-og.png"}}" alt="OG Logo"></a>
+					<a href="{{store url="store-locator"}}">Find A Store</a>
+				</div>
+
+			</div>
+
+			<a class="close-reveal-modal">&#215;</a>
+		</div> 
 
 	</div>
 	<script type="text/javascript">
@@ -141,18 +196,24 @@ new Varien.Tabs('#product-tabs');
 
 </div>
 
-<!-- Removes price from page -->
 <script type="text/javascript">
-	jQuery('.prod-price').css('display', 'none');
+
+// Removes price from page
+jQuery('.prod-price').css('display', 'none');
+
+// externally add reveal.css
+jQuery("head").append("<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"http://assets2.revitive.fr/media/injector/default/css/reveal.css\">");
+
+// Minified Modal plugin - Zurb Reveal
+	(function(e){e("a[data-reveal-id]").live("click",function(t){t.preventDefault();var n=e(this).attr("data-reveal-id");e("#"+n).reveal(e(this).data())});e.fn.reveal=function(t){var n={animation:"fade",animationspeed:250,closeonbackgroundclick:true,dismissmodalclass:"close-reveal-modal"};var t=e.extend({},n,t);return this.each(function(){function a(){s=false}function f(){s=true}var n=e(this),r=parseInt(n.css("top")),i=n.height()+r,s=false,o=e(".reveal-modal-bg");if(o.length==0){o=e('<div class="reveal-modal-bg" />').insertAfter(n)}n.bind("reveal:open",function(){o.unbind("click.modalEvent");e("."+t.dismissmodalclass).unbind("click.modalEvent");if(!s){f();if(t.animation=="fadeAndPop"){n.css({top:e(document).scrollTop()-i,opacity:0,visibility:"visible"});o.fadeIn(t.animationspeed/2);n.delay(t.animationspeed/2).animate({top:e(document).scrollTop()+r+"px",opacity:1},t.animationspeed,a())}if(t.animation=="fade"){n.css({opacity:0,visibility:"visible",top:e(document).scrollTop()+r});o.fadeIn(t.animationspeed/2);n.delay(t.animationspeed/2).animate({opacity:1},t.animationspeed,a())}if(t.animation=="none"){n.css({visibility:"visible",top:e(document).scrollTop()+r});o.css({display:"block"});a()}}n.unbind("reveal:open")});n.bind("reveal:close",function(){if(!s){f();if(t.animation=="fadeAndPop"){o.delay(t.animationspeed).fadeOut(t.animationspeed);n.animate({top:e(document).scrollTop()-i+"px",opacity:0},t.animationspeed/2,function(){n.css({top:r,opacity:1,visibility:"hidden"});a()})}if(t.animation=="fade"){o.delay(t.animationspeed).fadeOut(t.animationspeed);n.animate({opacity:0},t.animationspeed,function(){n.css({opacity:1,visibility:"hidden",top:r});a()})}if(t.animation=="none"){n.css({visibility:"hidden",top:r});o.css({display:"none"})}}n.unbind("reveal:close")});n.trigger("reveal:open");var u=e("."+t.dismissmodalclass).bind("click.modalEvent",function(){n.trigger("reveal:close")});if(t.closeonbackgroundclick){o.css({cursor:"pointer"});o.bind("click.modalEvent",function(){n.trigger("reveal:close")})}e("body").keyup(function(e){if(e.which===27){n.trigger("reveal:close")}})})}})(jQuery)
+
 </script>
-<!--*****************************-->
 
 
 
 <!-- Short Description -->
 
-<p><img alt="Revitive IX" src="{{media url="re_sgen/re_sgen_prodlogo_rix.png"}}" style="margin-bottom: 8px;" /></p><p>Designed to:</p><ul class="desc-list"><li>Increase lower leg circulation</li><li>Reduce swollen feet and ankles</li><li>Alleviate pain and discomfort</li></ul><!-- <p style="lime-height:24px;">Use Store Locator and find your nearest Revitive retailer today!</p> --><div style="width:220px; height:100px; background white; position:absolute; right:100px; top:300px; background:white; "></div>
-
+<p><img alt="Revitive IX" src="{{media url="re_sgen/re_sgen_prodlogo_rix.png"}}" style="margin-bottom: 8px;" /></p><p>Designed to:</p><ul class="desc-list"><li>Increase lower leg circulation</li><li>Reduce swollen feet and ankles</li><li>Alleviate pain and discomfort</li></ul><a style="display:block; width: 319px; height: 40px; color: #fff; font-size: 26px; background: #3a913f url('/media/revitive/skin/btn_add_to_basket_01.png') no-repeat 0px 0px; text-decoration:none; text-align: center;line-height: 36px;margin: 160px 0 10px;"href="#" data-reveal-id="myModal" onclick="_gaq.push(['_trackEvent', ‘Buy Online', 'Window']);">Buy Online</a><a style="display:block; width: 318px; height: 30px; border: #a6a6a6 solid 1px; background-color: #f2f2f2; background-image: url(/media/revitive/skin/btn_small.png); background-repeat: repeat-x; background-position: 0 0; text-align: center; font-size: 18px; display: block; color: #575959; line-height: 29px; text-decoration:none;" href="{{store url="store-locator"}}">Find A Store</a>
 
 <!-- SKU -->
 SKU-NEEDED-0101010101
@@ -167,7 +228,7 @@ revitive-ix
 
 
 <!-- Price -->
-299.99
+0
 
 <!-- Tax Class -->
 None
